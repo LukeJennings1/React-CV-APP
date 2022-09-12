@@ -5,23 +5,40 @@ import {useState} from 'react';
 
 function GeneralInfo() {
 
-    const [name, setName] = useState('');
-    console.log(name)
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [title, setTitle] = useState('');
+    const [email, setEmail] = useState('');
+    const [num, setNum] = useState('');
+    const [address, setaddress] = useState('');
+
+
+    console.log()
 
     function Submit(e) {
         e.preventDefault();
-        console.log(e.target.value)
+        
+        console.log(e.altKey)
 
     }
     return (
         <div>
-            {/* the setName hook will be called whenever a change to the event (e) is detected. This means that it will update name 
-            on latter and then on each additional letter input. so say we put the letter t into the textbox it will auto
-            change the name value to t, then if we put e so te now it will set name to te and so on. 
+            {/* the setName hook will be called whenever a change to the event (e) is detected. This means that it will set 
+            the 'name' variable in the setName hook to anything in the text box and update it everytime we type in a new letter into
+            the textbox. Essentially it sets the 'name' variable to whatever is in the textbox as we type it in. 
+
+            All the button input does is run a function. This function is being set to do something with the name stateHook variable. 
+
             
             when we press onClick it will call the Submit function where we can write code use the name state hook. */}
             <form>
-                <input className = 'nameField' type='text' value={name} placeholder='Name' onChange={e => setName(e.target.value)}  required></input>
+                <input className = 'firstnameField' type='text' value={firstName} placeholder='Firstname' onChange={(e) => setFirstName(e.target.value)}  required></input>
+                <input className = 'lastnameField' type='text' value={lastName} placeholder='Lastname' onChange={(e) => setLastName(e.target.value)}  required></input>
+                <input className = 'titleField' type='text' value={title} placeholder='Current Role Title' onChange={(e) => setTitle(e.target.value)}  required></input>
+                <input className = 'emailField' type='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)}  required></input>
+                <input className = 'numField' type='number' value={num} placeholder='Contact Number' onChange={(e) => setNum(e.target.value)}  required></input>
+                <input className = 'addressField' type='text' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></input>
+
                 <input type = 'button' onClick={Submit} value= 'button' ></input>
 
             </form>
