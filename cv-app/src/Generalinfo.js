@@ -1,7 +1,6 @@
-/* This section needs to have general info like: Name, Email, Phone Num, address. It needs to have a text box 
+/* This section has info like: Name, Email, Phone Num, address. It needs to have a text box 
 for each input field. the info should be stored in an object.  A button should be added to add the information */
 
-import { render } from '@testing-library/react';
 import React, {useState, useEffect} from 'react';
 
 function GeneralInfo() {
@@ -13,10 +12,8 @@ function GeneralInfo() {
     const [num, setNum] = useState('');
     const [address, setaddress] = useState('');
 
-   const add =  useEffect(() => {
-        console.log('updated');
-    },[]);
-
+    let tempStorage = ''
+    console.log(tempStorage)
 
     function Submit() {
         const generalInfoObject = {
@@ -27,10 +24,6 @@ function GeneralInfo() {
             userNumber: num, 
             userAddress: address
         }      
-        const idGrab = document.getElementById('parentWrapper');
-        const create = document.createElement('div')
-        idGrab.appendChild(create)
-        create.textContent = generalInfoObject.userFirstName;
     }
     return (
         <div id = 'parentWrapper' className='parentWrapper'>
@@ -49,8 +42,16 @@ function GeneralInfo() {
                 <input className = 'emailField' type='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)}  required></input>
                 <input className = 'numField' type='phone' value={num} placeholder='Contact Number' onChange={(e) => setNum(e.target.value)}  required></input>
                 <input className = 'addressField' type='text' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></input>
-                <input type = 'button' onClick={Submit} value= 'button' ></input>
+                <input type = 'button' onClick={Submit} value= 'button'></input>
             </form>
+            <div className = 'GeneralInfoSection'>
+            <div className = 'GeneralInfo'>{firstName}</div>
+            <div className = 'GeneralInfo'>{lastName}</div>
+            <div className = 'GeneralInfo'>{title}</div>
+            <div className = 'GeneralInfo'>{email}</div>
+            <div className = 'GeneralInfo'>{num}</div>
+            <div className = 'GeneralInfo'>{address}</div>
+            </div>
         </div> 
     )
 }
