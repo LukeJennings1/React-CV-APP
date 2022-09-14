@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Inconsolata:wght@300&family=Josefin+Sans&family=Kdam+Thmor+Pro&family=Pacifico&family=Roboto:wght@100&display=swap');
+
+*{
+  font-family:  monospace;
+  
+ --width: 800px;
+ --height: 1000px;
+}
+#root { 
+  background-color: #d8d6d6;
+  height: 1000px;
+  margin-top: -10px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.siteWrapper {
+display: flex;
+align-items:center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.headerWrapper {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: aliceblue;
+}
+.logo { 
+  height: 40px;
+  margin-right: 10px;
+}
+.siteName {
+  margin-left: 10px;
+  width: 50%;
+}
+.formSection {
+  border: solid;
+  height: var(--height);
+  width: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: #ebebeb;
+}
+.inputFields { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.textBoxes {
+  width: 500px;
+  border-radius: 5px;
+  border-color: transparent;
+}
+input::placeholder {
+  color: rgb(0, 0, 0);
+}
+.GeneralInfoSection {
+  display: flex;
+  border: solid;
+  margin-left: 100px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;justify-content: center; 
+  width: var(--width);
+  margin-right: 10px; 
+  height: 1020px;
+} 
+.workExperienceWrapper {
+  display: flex;
+  
+}
+.workExperienceSectionWrapper {
+    display: flex;
+    border: solid;
+    border-color: transparent;
+    margin-left: 100px;
+    width: var(--width);
+    margin-right: 10px;
+    height: 1020px;
+}
+.arrowFig {
+    height: 60px;
+    width: 64px;
+    position:absolute;
+    margin-left: 315px;
+    margin-top: 30px;
 }
