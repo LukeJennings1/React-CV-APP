@@ -3,12 +3,12 @@
 *{
   font-family:  monospace;
   
- --width: 800px;
+ --width: 775px;
  --height: 1000px;
 }
 #root { 
-  background-color: #d8d6d6;
-  height: 1000px;
+  background-color: #fafcff;
+  height: 1150px;
   margin-top: -10px;
   margin-right: -10px;
   margin-left: -10px;
@@ -26,7 +26,7 @@ align-items:center;
   height: 50px;
   margin-bottom: 10px;
   font-size: 25px;
-  color: aliceblue;
+  color: rgb(24 74 133);
 }
 .logo { 
   height: 40px;
@@ -37,7 +37,7 @@ align-items:center;
   width: 50%;
 }
 .formSection {
-  border: solid;
+  border: solid 3px;
   height: var(--height);
   width: 500px;
   margin-left: 10px;
@@ -46,7 +46,6 @@ align-items:center;
   justify-content: center;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: #ebebeb;
 }
 .inputFields { 
   display: flex;
@@ -57,23 +56,59 @@ align-items:center;
 .textBoxes {
   width: 500px;
   border-radius: 5px;
-  border-color: transparent;
+  border: solid;
+  border-color: rgb(24 74 133);
 }
 input::placeholder {
   color: rgb(0, 0, 0);
 }
+.textBoxes:focus {
+  outline: rgb(255, 255, 255);
+}
+
 .GeneralInfoSection {
   display: flex;
   border: solid;
-  margin-left: 100px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;justify-content: center; 
+  margin-left: 83px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(184, 122, 122, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;justify-content: center; 
   width: var(--width);
-  margin-right: 10px; 
-  height: 1020px;
+  margin-right: 15px; 
+  height: 1032px;
 } 
+.cvTriangle { 
+position: absolute;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 300px 300px 0 0;
+border-color: #27425e transparent transparent transparent;
+z-index: 1;
+}
+.vertRectangle{
+  position: absolute;
+  height: 1032px;
+  width: 222px;
+  background-color: #ff7b00;
+}
+.upperThird {
+  position: absolute;
+  height: 20px;
+  width: 553px;
+  margin-top: 302px;
+  margin-left: 222px;
+  background-color: #27425e;
+}
+.lowerThird {
+  position: absolute;
+  height: 20px;
+  width: 553px;
+  margin-top: 600px;
+  margin-left: 222px;
+  background-color: #27425e;
+}
 .workExperienceWrapper {
   display: flex;
-  
+
 }
 .workExperienceSectionWrapper {
     display: flex;
@@ -90,4 +125,23 @@ input::placeholder {
     position:absolute;
     margin-left: 315px;
     margin-top: 30px;
+}
+.lowerThirdFoorter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 50px;
+  width: 1442px;
+  background-color: #27425e;
+  position: absolute;
+  gap: 10px;
+}
+.nameField {
+  color: #fafcff;
+}
+.githubLogo{
+  height: 25px;
+  width: 25px;
+  margin-top: 3px;
 }
