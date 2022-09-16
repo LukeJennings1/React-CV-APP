@@ -2,6 +2,8 @@
 
 
 function CVdesign (){
+
+
     return (
         <div className="cvDesignWrapper">
         <div className = 'cvTriangle'></div>
@@ -12,7 +14,6 @@ function CVdesign (){
         </div>
 
     )
-
 }
 
 export default CVdesign;

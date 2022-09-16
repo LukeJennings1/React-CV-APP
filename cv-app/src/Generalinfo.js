@@ -4,6 +4,7 @@ for each input field. the info should be stored in an object.  A button should b
 import React, {useState, useEffect} from 'react';
 import arrowIcon from './icons8-arrow-96.png';
 import CVdesign from './CVshapes'
+import AddJobExp from './addJobExp'
 
 
 function GeneralInfo() {
@@ -14,15 +15,6 @@ function GeneralInfo() {
     const [email, setEmail] = useState('');
     const [num, setNum] = useState('');
     const [address, setaddress] = useState('');
-    const [position, setPosition] = useState('')
-    const [company, setCompany] = useState('')
-    const [location, setLocation] = useState('')
-    const [from, setFrom] = useState('')
-    const [to, setTo] = useState('')
-
-    const addDetails  = () => {
-        console.log('hello')
-    };
     return (
         <div id = 'pagewrapper' className='siteWrapper'>
             {/* the setName hook will be called whenever a change to the event (e) is detected. This means that it will set 
@@ -43,18 +35,12 @@ function GeneralInfo() {
                 <input className = 'textBoxes' type='phone' value={num} placeholder='Contact Number' onChange={(e) => setNum(e.target.value)}  required></input>
                 <input className = 'textBoxes' type='text' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></input>
 
-                <div className = 'headingTitle'>Work Experience</div>
-                <form className='inputFields'>
-                <input className = 'textBoxes' type='text' placeholder='Location' value={position} onChange={(e) => setPosition(e.target.value)}></input>
-                <input className = 'textBoxes' type='text' placeholder='Company' value={company} onChange={(e) => setCompany(e.target.value)}></input>
-                <input className = 'textBoxes' type='text' placeholder='City' value={location} onChange={(e) => setLocation(e.target.value)}></input>
-                <input className = 'textBoxes' type='date' placeholder='From' value={from} onChange={(e) => setFrom(e.target.value)}></input>
-                <input className = 'textBoxes' type='date' placeholder='To' value={to} onChange={(e) => setTo(e.target.value)}></input>
-                <input type='button' onClick={addDetails}></input>
+
             </form>
-                
-            </form>
-            
+            <div className = 'headingTitle'>Work Experience</div>
+
+            <AddJobExp />
+
             <img src={arrowIcon} className = 'arrowFig'></img>
             </div>
             <div className = 'GeneralInfoSection'>
@@ -67,13 +53,7 @@ function GeneralInfo() {
             <div className = 'GeneralInfo'>{num}</div>
             <div className = 'GeneralInfo'>{address}</div>
             
-            <div className = 'workExperienceSectionWrapper'>
-                <div className = 'workExperienceInputField'>{position}</div> 
-                <div className = 'workExperienceInputField'>{company}</div> 
-                <div className = 'workExperienceInputField'>{location}</div> 
-                <div className = 'workExperienceInputField'>{from}</div> 
-                <div className = 'workExperienceInputField'>{to}</div> 
-            </div>
+          
             </div>
             </div>
             
