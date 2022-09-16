@@ -19,7 +19,7 @@ const remove = () => {
 }
     return (
         <div className='jobForm'>
-            <form>
+            <form className='jobInputForm'>
             {inputFields.map((form, index) => {
                 return (
                     <div key={index}>
@@ -30,14 +30,14 @@ const remove = () => {
                     <div>{form.from}</div>
                     <div>{form.to}</div>
                     <div>{form.duties}</div>
-
-                    <input name='position' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.position} />
-                    <input name='company' placeholder='Employer' onChange = {e => handleInputChange(e, index)} value = {form.company} />
-                    <input name='location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.location} />
-                    <input type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
-                    <input type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
-                    <input type = 'textbox' name='duties' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
-
+                    <div className='jobInputFields'>
+                    <input className = 'jobInputBoxes' name='company' placeholder='Employer' onChange = {e => handleInputChange(e, index)} value = {form.company} />
+                    <input className = 'jobInputBoxes' name='position' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.position} />
+                    <input className = 'jobInputBoxes' name='location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.location} />
+                    <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
+                    <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
+                    <textarea rows="4" cols="50" name='duties' className = 'jobInputBoxes' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
+                    </div>
 
                 </div>
               )

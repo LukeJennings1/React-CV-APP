@@ -43,10 +43,11 @@ align-items:center;
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: column;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  flex-direction: column;
+  
 }
 .inputFields { 
   display: flex;
@@ -66,11 +67,23 @@ input::placeholder {
 .textBoxes:focus {
   outline: rgb(255, 255, 255);
 }
-
+.jobInputFields {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px ;
+}
+.jobInputBoxes{
+  width: 500px;
+  border-radius: 5px;
+  border: solid;
+  border-color: rgb(24 74 133);
+}
 .GeneralInfoSection {
   display: flex;
   border: solid;
-  margin-left: 83px;
+  position: absolute;
+  margin-left: 625px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(184, 122, 122, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;justify-content: center; 
   width: var(--width);
   margin-right: 15px; 
@@ -85,6 +98,9 @@ border-style: solid;
 border-width: 300px 300px 0 0;
 border-color: #27425e transparent transparent transparent;
 z-index: 1;
+}
+.cvDesignWrapper {
+  margin-right: 775px;
 }
 .vertRectangle{
   position: absolute;
