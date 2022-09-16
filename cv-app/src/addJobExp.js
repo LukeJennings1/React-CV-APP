@@ -11,10 +11,10 @@ value[index][event.target.name] = event.target.value;
 setInputFields(value); 
 }
 const addFields = () => {
- let object = {position: '', company: '', location: '', from: '', to: ''}
+ let object = {position: '', company: '', location: '', from: '', to: '', duties: ''}
  setInputFields([...inputFields, object])
 }
-const submit = () => {
+const remove = () => {
     console.log(inputFields)
 }
     return (
@@ -23,22 +23,29 @@ const submit = () => {
             {inputFields.map((form, index) => {
                 return (
                     <div key={index}>
-                    <div>{form.position}</div>
-                    <input
-                    name='position'
-                    placeholder='position'
-                    onChange = {event => handleInputChange(event, index)}
-                    value = {form.position}
 
-                    />
+                    <div>{form.position}</div>
+                    <div>{form.company}</div>
+                    <div>{form.location}</div>
+                    <div>{form.from}</div>
+                    <div>{form.to}</div>
+                    <div>{form.duties}</div>
+
+                    <input name='position' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.position} />
+                    <input name='company' placeholder='Employer' onChange = {e => handleInputChange(e, index)} value = {form.company} />
+                    <input name='location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.location} />
+                    <input type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
+                    <input type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
+                    <input type = 'textbox' name='duties' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
+
+
                 </div>
               )
             })}
         </form>
 
         <button onClick={addFields}>add</button>
-        <button onClick={submit}>Submit</button>
-        <div className='tester'>{inputFields.position}</div>
+        <button onClick={remove}>Submit</button>
 
         </div>
     );
