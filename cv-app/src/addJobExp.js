@@ -44,8 +44,8 @@ const remove = () => {
             })}
         </form>
 
-        <button onClick={addFields}>add</button>
-        <button onClick={remove}>Submit</button>
+        <button  className='add/delButtons' onClick={addFields}>add</button>
+        <button  className='add/delButtons' onClick={remove}>Submit</button>
 
         </div>
     );

@@ -74,7 +74,8 @@ input::placeholder {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5px ;
+  gap: 5px;
+  margin-bottom: 15px;
 }
 .jobInputBoxes{
   width: 500px;
@@ -82,8 +83,8 @@ input::placeholder {
   border: solid;
   border-color: rgb(24 74 133);
 }
+
 #textArea {
-  margin-bottom: 15px;
   max-width: 500px;
   min-width: 500px;
   height: 100%;
