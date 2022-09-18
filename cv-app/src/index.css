@@ -2,7 +2,7 @@
 
 *{
   font-family:  monospace;
-  
+  overflow: auto;
  --width: 775px;
  --height: 1000px;
 }
@@ -39,11 +39,9 @@ align-items:center;
 .formSection {
   border: solid 3px;
   height: var(--height);
-  width: 500px;
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -60,6 +58,11 @@ align-items:center;
   border-radius: 5px;
   border: solid;
   border-color: rgb(24 74 133);
+}
+.headingTitle {
+  display: flex;
+  justify-content: center;
+  padding: 7px;
 }
 input::placeholder {
   color: rgb(0, 0, 0);
@@ -78,6 +81,12 @@ input::placeholder {
   border-radius: 5px;
   border: solid;
   border-color: rgb(24 74 133);
+}
+#textArea {
+  margin-bottom: 15px;
+  max-width: 500px;
+  min-width: 500px;
+  height: 100%;
 }
 .GeneralInfoSection {
   display: flex;

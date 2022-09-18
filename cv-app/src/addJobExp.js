@@ -36,7 +36,7 @@ const remove = () => {
                     <input className = 'jobInputBoxes' name='location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.location} />
                     <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
                     <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
-                    <textarea rows="4" cols="50" name='duties' className = 'jobInputBoxes' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
+                    <textarea rows="4" cols="50" name='duties' className = 'jobInputBoxes' id = 'textArea' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
                     </div>
 
                 </div>
