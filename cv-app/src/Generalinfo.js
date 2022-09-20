@@ -6,6 +6,7 @@ import arrowIcon from './icons8-arrow-96.png';
 import CVdesign from './CVshapes';
 import AddJobExp from './addJobExp';
 import AddEducation from './addEducation';
+import Profile from './inputProfile'
 
 
 function GeneralInfo() {
@@ -34,10 +35,13 @@ function GeneralInfo() {
                 <input className = 'textBoxes' type='text' value={title} placeholder='Current Role Title' onChange={(e) => setTitle(e.target.value)}  required></input>
                 <input className = 'textBoxes' type='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)}  required></input>
                 <input className = 'textBoxes' type='phone' value={num} placeholder='Contact Number' onChange={(e) => setNum(e.target.value)}  required></input>
-                <input className = 'textBoxes' type='text' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></input>
-
+                <textarea rows="2" cols="50" id = 'textAreaAddress'className = 'textBoxes' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></textarea>
 
             </form>
+            <div className = 'headingTitle'>About me / Introduction</div>
+
+            <Profile />
+
             <div className = 'headingTitle'>Work Experience</div>
 
             <AddJobExp />
@@ -47,16 +51,33 @@ function GeneralInfo() {
             <AddEducation />
             <img src={arrowIcon} className = 'arrowFig'></img>
             </div>
-            <div className = 'GeneralInfoSection'>
             <CVdesign />
+            <div className = 'GeneralInfoSection'>  
+            <div className='nameTitle'>
+            <div className = 'GeneralInfo' id='firstName' >{firstName}</div>
+            <div className = 'GeneralInfo' id='lastName' >{lastName}</div>
+            <div className = 'GeneralInfo' id='jobRole'>{title}</div>
 
-            <div className = 'GeneralInfo'>{firstName}</div>
-            <div className = 'GeneralInfo'>{lastName}</div>
-            <div className = 'GeneralInfo'>{title}</div>
+            </div>
+            <div className = 'cvSubHeadingWrapper'>
+            <div className = 'cvSubHeadingTitle'id='contactInfo'>CONTACT</div>
+            <div className = 'subheadingShape'></div>
             <div className = 'GeneralInfo'>{email}</div>
             <div className = 'GeneralInfo'>{num}</div>
             <div className = 'GeneralInfo'>{address}</div>
-            
+            </div>
+            <div className='educationField'>
+            <div className = 'cvSubHeadingTitle'>EDUCATION</div>
+            <div className = 'subheadingShape'></div>
+            </div>
+            <div className='profileField'>
+            <div className = 'cvSubHeadingTitleRightSide'>PROFILE</div>
+            <div className = 'subheadingShapeRight'></div>
+            </div>
+            <div className='experienceField'>
+            <div className = 'cvSubHeadingTitleRightSide'>EXPERIENCE</div>
+            <div className = 'subheadingShapeRight'></div>
+            </div>
           
             </div>
             </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Inconsolata:wght@300&family=Josefin+Sans&family=Kdam+Thmor+Pro&family=Pacifico&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Inconsolata:wght@300&family=Josefin+Sans&family=Kdam+Thmor+Pro&family=Pacifico&family=Roboto:wght@700&display=swap');
 
 *{
   font-family:  monospace;
@@ -89,6 +90,9 @@ input::placeholder {
   min-width: 500px;
   height: 100%;
 }
+.GeneralInfo{
+  z-index: 1;
+}
 .GeneralInfoSection {
   display: flex;
   border: solid;
@@ -98,6 +102,7 @@ input::placeholder {
   width: var(--width);
   margin-right: 15px; 
   height: 1033px;
+  gap: 5px  ;
   
 } 
 .cvTriangle { 
@@ -105,33 +110,35 @@ position: absolute;
 width: 0;
 height: 0;
 border-style: solid;
-border-width: 300px 300px 0 0;
+border-width: 350px 350px 0 0;
 border-color: #27425e transparent transparent transparent;
 z-index: 1;
 }
 .cvDesignWrapper {
-  margin-right: 775px;
+  margin-bottom: 1034px;
+  margin-left: 62px;
 }
 .vertRectangle{
   position: absolute;
-  height: 1032px;
-  width: 222px;
-  background-color: #ff7b00;
+  height: 1034px;
+  width: 300px;
+  background-color: #ea7406;
+  z-index: 0.5;
 }
 .upperThird {
   position: absolute;
   height: 20px;
-  width: 553px;
+  width: 477px;
   margin-top: 302px;
-  margin-left: 222px;
+  margin-left: 300px;
   background-color: #27425e;
 }
 .lowerThird {
   position: absolute;
   height: 20px;
-  width: 553px;
-  margin-top: 600px;
-  margin-left: 222px;
+  width: 477px;
+  margin-top: 550px;
+  margin-left: 300px;
   background-color: #27425e;
 }
 .workExperienceWrapper {
@@ -172,4 +179,85 @@ z-index: 1;
   height: 25px;
   width: 25px;
   margin-top: 3px;
+}
+
+#firstName, #lastName {
+ display: block;
+ color: #ea7406;
+ font-size: 45px;
+ font-weight: bold;
+ font-family: 'Roboto', sans-serif;
+}
+.nameTitle {   
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-top: 100px;
+  width: 300px;
+}
+#jobRole {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.cvSubHeadingWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 470px;
+  margin-top: 350px;
+  width: 240px;
+  height: 150px;
+  position: absolute;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  color: white;
+}
+.cvSubHeadingTitle {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.subheadingShape {
+  width: 45px;
+  border: solid;
+  border-width: 3px;
+  border-color: #27425e;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+#textAreaAddress{
+  resize: none;
+}
+.educationField{
+  margin-right: 470px;
+  margin-top: 500px;
+  width: 240px;
+  height: 150px;
+  color: white;
+  position: absolute;
+}
+.cvSubHeadingTitleRightSide{
+  font-size: 18px;
+  color: #27425e;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.profileField {
+  margin-top: 335px;
+  margin-right: 40px;
+  position: absolute;
+}
+.subheadingShapeRight{
+  width: 45px;
+  border: solid;
+  border-width: 3px;
+  border-color: #ea7406;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.experienceField {
+  margin-top: 583px;
+  margin-right: 10px;
+  position: absolute;
 }

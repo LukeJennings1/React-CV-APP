@@ -38,8 +38,8 @@ const remove = () => {
                     <input className = 'jobInputBoxes' name='Subject' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.Subject} />
                     <input className = 'jobInputBoxes' name='Location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.Location} />
                     <input className = 'jobInputBoxes' name='Qualification' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.Qualification} />
-                    <input className = 'jobInputBoxes' type = 'from' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
-                    <input className = 'jobInputBoxes' type = 'to' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
+                    <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
+                    <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
                     </div>
 
                 </div>
