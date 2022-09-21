@@ -3,7 +3,6 @@
 
 *{
   font-family:  monospace;
-  overflow: auto;
  --width: 775px;
  --height: 1000px;
 }
@@ -46,6 +45,7 @@ align-items:center;
   flex-direction: column;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  overflow: auto;
   
 }
 .inputFields { 
@@ -277,4 +277,33 @@ z-index: 1;
 .textBoxes {
   display: flex;
   /* flex-direction: column; */
+}
+.jobExpFieldInput {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.jobOutputValues {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 928px;
+  margin-top: -325px;
+}
+.inputBoxes{
+display: flex;
+width: 500px;
+border-radius: 5px;
+border: solid;
+border-color: rgb(24 74 133);
+}
+
+.inputBoxes:focus {
+  outline: rgb(255, 255, 255);
+}
+.formInputBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* position: absolute; */
 }

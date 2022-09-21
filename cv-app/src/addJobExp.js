@@ -12,12 +12,9 @@ const buttonClickRemove = () => {
     setInputFields(inputFields.slice(0,1))
 }
 const addValueToObject = (e, id) => {
-    console.log(id)
-
    const clonedData = [...inputFields]
-   clonedData[id][e.target.name] = e.target.value
-    setInputFields(clonedData)
-    console.log(clonedData)   
+   clonedData[id][e.target.id] = e.target.value
+   setInputFields(clonedData)
 }
 return (
     <div>
@@ -29,12 +26,23 @@ return (
         {inputFields.map((inputField, id) => {
             return (
                 
-        <form className='jobInputFieldWrapper' key={id}>
-
-            <input className='textBoxes' name = 'position' onChange={(e) => addValueToObject(e, id)} value={inputField.position}></input>
+ <form className='jobInputFieldWrapper' key={id}>
+            <div className='formInputBoxes'>
+            <input className='inputBoxes' placeholder = 'Employer' id = 'company' name = 'company' onChange={(e) => addValueToObject(e, id)} value={inputField.company}></input>
+            <input className='inputBoxes' placeholder = 'Position Name' id = 'position'name = 'position' onChange={(e) => addValueToObject(e, id)} value={inputField.position}></input>
+            <input className='inputBoxes' placeholder = 'Date Employed From: ' type='date' id = 'from' name = 'from' onChange={(e) => addValueToObject(e, id)} value={inputField.from}></input>
+            <input className='inputBoxes' placeholder = 'Date Employed To: ' type='date' id = 'to' name = 'to' onChange={(e) => addValueToObject(e, id)} value={inputField.to}></input>
+            <input className='inputBoxes' placeholder = 'Job Desription' id = 'duties'name = 'duties' onChange={(e) => addValueToObject(e, id)} value={inputField.duties}></input>
+            </div>
+         <div className='jobOutputValues'>
+            <div>{inputField.company}</div>
             <div>{inputField.position}</div>
+            <div>{inputField.from}</div>
+            <div>{inputField.to}</div>
+            <div>{inputField.duties}</div>
+        </div>
 
-        </form> )
+ </form> )
         })
         }
     </div>
