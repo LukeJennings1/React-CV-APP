@@ -42,13 +42,18 @@ function GeneralInfo() {
 
             <Profile />
 
-            <div className = 'headingTitle'>Work Experience</div>
-
-            <AddJobExp />
+            
 
             <div className = 'headingTitle'>Education</div>
 
             <AddEducation />
+            <AddEducation />
+            <AddEducation />
+
+            <div className = 'headingTitle'>Work Experience</div>
+            
+
+            <AddJobExp />
             <img src={arrowIcon} className = 'arrowFig'></img>
             </div>
             <CVdesign />
@@ -62,9 +67,9 @@ function GeneralInfo() {
             <div className = 'cvSubHeadingWrapper'>
             <div className = 'cvSubHeadingTitle'id='contactInfo'>CONTACT</div>
             <div className = 'subheadingShape'></div>
-            <div className = 'GeneralInfo'>{email}</div>
-            <div className = 'GeneralInfo'>{num}</div>
-            <div className = 'GeneralInfo'>{address}</div>
+            <div className = 'GeneralInfo'>Email: {email}</div>
+            <div className = 'GeneralInfo'>Mobile: {num}</div>
+            <div className = 'GeneralInfo'>Location: {address}</div>
             </div>
             <div className='educationField'>
             <div className = 'cvSubHeadingTitle'>EDUCATION</div>
@@ -77,6 +82,7 @@ function GeneralInfo() {
             <div className='experienceField'>
             <div className = 'cvSubHeadingTitleRightSide'>EXPERIENCE</div>
             <div className = 'subheadingShapeRight'></div>
+            
             </div>
           
             </div>

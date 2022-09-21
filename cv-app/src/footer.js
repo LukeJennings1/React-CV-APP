@@ -1,6 +1,6 @@
 import image from './GitHub-Mark-Light-32px.png'
 
-function LowerThird() { 
+function Footer() { 
 
     return (
         <div className="lowerThirdFoorter">
@@ -12,4 +12,4 @@ function LowerThird() {
     )
 }
 
-export default LowerThird;
+export default Footer;

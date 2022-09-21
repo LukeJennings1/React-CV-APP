@@ -3,56 +3,36 @@ import {useState} from 'react';
 
 function AddEducation() {
     
-const [inputFields, setInputFields] = useState([
-    {UniversityName: '', Subject: '', Location: '', Qualification: '', from: '', to: ''},
-])
-const handleInputChange = (event, index) => {
-let value = [...inputFields]
-value[index][event.target.name] = event.target.value;
-setInputFields(value); 
-}
-const addFields = () => {
- let object =  {UniversityName: '', Subject: '', Location: '', Qualification: '', from: '', to: ''}
- setInputFields([...inputFields, object])
-}
-const remove = () => {
-    console.log(inputFields)
-}
-    return (
-        <div className='jobForm'>
-            <form className='educationInputForm'>
-            {inputFields.map((form, index) => {
-                return (
-                    <div key={index}>
+    const [UniversityName, setUniversityName] = useState('')
+    const [Qualification, setQualification] = useState('')
+    const [Subject, setSubject] = useState('')
+    const [from, setFrom] = useState('')
+    const [to, setto] = useState('')
 
 
-                    <div className='educationInput'>{form.UniversityName}</div>
-                    <div className='educationInput'>{form.Subject}</div>
-                    <div className='educationInput'>{form.Location}</div>
-                    <div className='educationInput'>{form.Qualification}</div>
-                    <div className='educationInput'>{form.from}</div>
-                    <div className='educationInput'>{form.to}</div>
-
-                    <div className='jobInputFields'>
-                    <input className = 'jobInputBoxes' name='UniversityName' placeholder='Employer' onChange = {e => handleInputChange(e, index)} value = {form.UniversityName} />
-                    <input className = 'jobInputBoxes' name='Subject' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.Subject} />
-                    <input className = 'jobInputBoxes' name='Location' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.Location} />
-                    <input className = 'jobInputBoxes' name='Qualification' placeholder='Location' onChange = {e => handleInputChange(e, index)} value = {form.Qualification} />
-                    <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
-                    <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
-                    </div>
-
-                </div>
-              )
-            })}
-        </form>
-
-        <button className='add/delButtons' onClick={addFields}>add</button>
-        <button className='add/delButtons' onClick={remove}>Submit</button>
-
+return (
+    <div>
+    <div className='jobInputFields'>
+    <input className = 'jobInputBoxes' name='UniversityName' placeholder='UniversityName' onChange = {e => setUniversityName(e.target.value)} value = {UniversityName} />
+    <input className = 'jobInputBoxes' name='Qualification' placeholder='Qualification' onChange = {e => setQualification(e.target.value)} value = {Qualification} />
+    <input className = 'jobInputBoxes' name='Grade' placeholder='Grade' onChange = {e => setSubject(e.target.value)} value = {Subject} />
+    <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => setFrom(e.target.value)} value = {from} />
+    <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => setto(e.target.value)} value = {to} />
+    </div>
+    <div className='educationInputWrapper'>
+        <div>{UniversityName}</div>
+        <div>{Qualification}</div>
+        <div>{Subject}</div>
+        <div>{from}</div>
+        <div>{to}</div>
         </div>
-    );
-};
+    
+    
+  </div>
+  
+)
+
+}
 
 export default AddEducation;
 
