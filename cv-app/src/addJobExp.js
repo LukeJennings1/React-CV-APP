@@ -3,48 +3,51 @@ import {useState, useEffect} from 'react';
 function AddJobExp(){
 
 const [inputFields, setInputFields] = useState([
-    {position: '', company: '', from: '', to: '',duties: ''},
+    {position: '', company: '', from: '', to: '',duties: '', id:1},
 ])
-const handleInputChange = (event, index) => {
-let value = [...inputFields]
-value[index][event.target.name] = event.target.value;
-setInputFields(value); 
+const buttonClick = () => {
+    setInputFields([...inputFields, {position: '', company: '', from: '', to: '',duties: '', id: inputFields.id +1}])
+} 
+const buttonClickRemove = () => {
+    setInputFields(inputFields.slice(0,1))
 }
+const addValueToObject = (e, id) => {
+    console.log(id)
 
-    return (
-        <div className='jobForm'>
-            <form className='jobInputForm'>
-            {inputFields.map((form, index) => {
-                return (
-                    <div key={index}>
-                   
-                    <div className='jobInputFields'>
-                    <input className = 'jobInputBoxes' name='company' placeholder='Employer' onChange = {e => handleInputChange(e, index)} value = {form.company} />
-                    <input className = 'jobInputBoxes' name='position' placeholder='Position' onChange = {e => handleInputChange(e, index)} value = {form.position} />
-                    <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => handleInputChange(e, index)} value = {form.from} />
-                    <input className = 'jobInputBoxes' type = 'date' name='to' placeholder='Date To' onChange = {e => handleInputChange(e, index)} value = {form.to} />
-                    <textarea rows="4" cols="50" name='duties' className = 'jobInputBoxes' id = 'textArea' placeholder='Duties' onChange = {e => handleInputChange(e, index)} value = {form.duties} />
-                    </div>
-
-                </div>
-              )
-            })}
-        </form> 
-
-            <div className='jobOutputWrapper'>
-                    <div className='jobOutputs' id = 'jobOutputTitle'>{inputFields[0].company}</div>
-                    <div className='jobOutputs' id = 'jobOutputPosition' >{inputFields[0].position}</div>
-
-                    <div className='jobDates'>
-                    <div className='jobOutputs' id = 'jobOutputDateFrom'>{inputFields[0].from} - </div>
-                    <div className='jobOutputs' id = 'jobOutputDateTo'>{inputFields[0].to}</div>
-                    </div>
-                    <div className='jobOutputs' id = 'jobOutputDuties'>{inputFields[0].duties}</div>
-                    </div>
-        </div>
-    );
+   const clonedData = [...inputFields]
+   clonedData[id][e.target.name] = e.target.value
+    setInputFields(clonedData)
+    console.log(clonedData)   
 }
-//  Firstly, I want to take an array object and copy it on add button - done.
+return (
+    <div>
+
+    <div className='jobExpFieldInput'>
+        <button onClick={buttonClick}>Add</button>
+        <button onClick={buttonClickRemove}>Remove</button>
+
+        {inputFields.map((inputField, id) => {
+            return (
+                
+        <form className='jobInputFieldWrapper' key={id}>
+
+            <input className='textBoxes' name = 'position' onChange={(e) => addValueToObject(e, id)} value={inputField.position}></input>
+            <div>{inputField.position}</div>
+
+        </form> )
+        })
+        }
+    </div>
+    </div>
+)
+
+}
+export default AddJobExp; 
+
+//  Firstly, I want to take an array object and copy it on add button - done - copies .
 // I want to take the input from a textbox and submit it to the new object via onChange. 
 
-export default AddJobExp;
+{/* <input className='textBoxes' onChange={e => addValueToObject(e.target.value)}></input>
+<input className='textBoxes' onChange={e => addValueToObject(e.target.value)}></input>
+<input className='textBoxes' onChange={e => addValueToObject(e.target.value)}></input>
+<input className='textBoxes' onChange={e => addValueToObject(e.target.value)}></input> */}

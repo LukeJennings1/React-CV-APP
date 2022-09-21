@@ -274,3 +274,7 @@ z-index: 1;
 #profileInputBox {
   height: 100px;
 }
+.textBoxes {
+  display: flex;
+  /* flex-direction: column; */
+}
