@@ -5,6 +5,9 @@ function AddJobExp(){
 const [inputFields, setInputFields] = useState([
     {position: '', company: '', from: '', to: '',duties: '', id:1},
 ])
+
+const [position,setPosition] = useState('')
+
 const buttonClick = () => {
     setInputFields([...inputFields, {position: '', company: '', from: '', to: '',duties: '', id: inputFields.id +1}])
 } 
@@ -15,6 +18,8 @@ const addValueToObject = (e, id) => {
    const clonedData = [...inputFields]
    clonedData[id][e.target.id] = e.target.value
    setInputFields(clonedData)
+   setPosition(clonedData[id][e.target.id] = e.target.value)
+   console.log(position);
 }
 return (
     <div>
@@ -35,21 +40,25 @@ return (
             <input className='inputBoxes' placeholder = 'Date Employed To: ' type='date' id = 'to' name = 'to' onChange={(e) => addValueToObject(e, id)} value={inputField.to}></input>
             <textarea className='inputBoxes' rows='4' columns = '50'  placeholder = 'Job Desription' id = 'duties' name = 'duties' onChange={(e) => addValueToObject(e, id)} value={inputField.duties}></textarea>
             </div>
+            
          <div className='jobOutputValues'>
-            <div>{inputField.company}</div>
-            <div>{inputField.position}</div>
-            <div>{inputField.from}</div>
-            <div>{inputField.to}</div>
+            <div id = 'companyNAme' >{inputField.company}</div>
+            <div >{inputField.position}</div>
+        <div className='employmentDatesWrapper'>
+            <div>{inputField.from} </div> - 
+            <div>{inputField.to} </div>
+        </div>
             <div>{inputField.duties}</div>
         </div>
-
+        
+        
  </form> )
         })
         }
     </div>
+
     </div>
 )
-
 }
 export default AddJobExp; 
 
