@@ -20,9 +20,10 @@ return (
     <div>
 
     <div className='jobExpFieldInput'>
-        <button onClick={buttonClick}>Add</button>
-        <button onClick={buttonClickRemove}>Remove</button>
-
+        <div className='addRemoveButtonWrapper'>
+        <button className = 'jobInputButtons' id = 'inputButtonAdd' onClick={buttonClick}>Add</button>
+        <button className = 'jobInputButtons' id = 'inputButtonRemove' onClick={buttonClickRemove}>Remove</button>
+        </div>
         {inputFields.map((inputField, id) => {
             return (
                 
@@ -32,7 +33,7 @@ return (
             <input className='inputBoxes' placeholder = 'Position Name' id = 'position'name = 'position' onChange={(e) => addValueToObject(e, id)} value={inputField.position}></input>
             <input className='inputBoxes' placeholder = 'Date Employed From: ' type='date' id = 'from' name = 'from' onChange={(e) => addValueToObject(e, id)} value={inputField.from}></input>
             <input className='inputBoxes' placeholder = 'Date Employed To: ' type='date' id = 'to' name = 'to' onChange={(e) => addValueToObject(e, id)} value={inputField.to}></input>
-            <input className='inputBoxes' placeholder = 'Job Desription' id = 'duties'name = 'duties' onChange={(e) => addValueToObject(e, id)} value={inputField.duties}></input>
+            <textarea className='inputBoxes' rows='4' columns = '50'  placeholder = 'Job Desription' id = 'duties' name = 'duties' onChange={(e) => addValueToObject(e, id)} value={inputField.duties}></textarea>
             </div>
          <div className='jobOutputValues'>
             <div>{inputField.company}</div>

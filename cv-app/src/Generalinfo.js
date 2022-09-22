@@ -47,8 +47,7 @@ function GeneralInfo() {
             <div className = 'headingTitle'>Education</div>
             
             <AddEducation />
-            <AddEducation />
-            <AddEducation />
+            
 
             <div className = 'headingTitle'>Work Experience</div>
             
