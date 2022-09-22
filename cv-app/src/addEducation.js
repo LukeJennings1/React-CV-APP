@@ -14,7 +14,7 @@ function AddEducation() {
 return (
     <div>
     <div className='jobInputFields'>
-    <input className = 'jobInputBoxes' name='UniversityName' placeholder='UniversityName' onChange = {e => setUniversityName(e.target.value)} value = {UniversityName} />
+    <input className = 'jobInputBoxes' name='University Name' placeholder='University Name' onChange = {e => setUniversityName(e.target.value)} value = {UniversityName} />
     <input className = 'jobInputBoxes' name='Qualification' placeholder='Qualification' onChange = {e => setQualification(e.target.value)} value = {Qualification} />
     <input className = 'jobInputBoxes' name='Grade' placeholder='Grade' onChange = {e => setSubject(e.target.value)} value = {Subject} />
     <input className = 'jobInputBoxes' type = 'date' name='from' placeholder='Date From' onChange = {e => setFrom(e.target.value)} value = {from} />
