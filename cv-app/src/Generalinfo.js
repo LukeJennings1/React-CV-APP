@@ -2,7 +2,6 @@
 for each input field. the info should be stored in an object.  A button should be added to add the information */
 
 import React, {useState, useEffect} from 'react';
-import arrowIcon from './icons8-arrow-96.png';
 import CVdesign from './CVshapes';
 import AddJobExp from './addJobExp';
 import AddEducation from './addEducation';
@@ -54,7 +53,6 @@ function GeneralInfo() {
             
 
             <AddJobExp />
-            <img src={arrowIcon} className = 'arrowFig'></img>
             </div>
             <CVdesign />
             <div className = 'GeneralInfoSection'>  
