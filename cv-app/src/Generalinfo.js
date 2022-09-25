@@ -10,6 +10,26 @@ import Profile from './inputProfile'
 
 function GeneralInfo() {
 
+    const [inputFields, setInputFields] = useState([
+        {position: '', company: '', from: '', to: '', duties: '', id:1},
+    ])
+    
+    const [position,setPosition] = useState('')
+    
+    const buttonClick = () => {
+        setInputFields([...inputFields, {position: '', company: '', from: '', to: '',duties: '', id: inputFields.id +1}])
+    } 
+    const buttonClickRemove = () => {
+        setInputFields(inputFields.slice(0,1))
+    }
+    const addValueToObject = (e, id) => {
+       const clonedData = [...inputFields]
+       clonedData[id][e.target.id] = e.target.value
+       setInputFields(clonedData)
+       setPosition(clonedData[id][e.target.id] = e.target.value)
+       console.log(position);
+    }
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [title, setTitle] = useState('');
@@ -27,7 +47,11 @@ function GeneralInfo() {
             
             when we press onClick it will call the Submit function where we can write code use the name state hook. */}
             <div className = 'formSection'>
-            <form className='inputFields'>
+           
+
+
+            
+            <div className='inputFields'>
             <div className = 'headingTitle'>Personal Information</div>
                 <input className = 'textBoxes' type='text' value={firstName} placeholder='Firstname' onChange={(e) => setFirstName(e.target.value)}  required></input>
                 <input className = 'textBoxes' type='text' value={lastName} placeholder='Lastname' onChange={(e) => setLastName(e.target.value)}  required></input>
@@ -36,23 +60,57 @@ function GeneralInfo() {
                 <input className = 'textBoxes' type='phone' value={num} placeholder='Contact Number' onChange={(e) => setNum(e.target.value)}  required></input>
                 <textarea rows="2" cols="50" id = 'textAreaAddress'className = 'textBoxes' value={address} placeholder='Address' onChange={(e) => setaddress(e.target.value)}  required></textarea>
 
-            </form>
-            <div className = 'headingTitle'>About me / Introduction</div>
+                <div className = 'headingTitle'>About me / Introduction</div>
 
-            <Profile />
+                <Profile />
 
+                <div className = 'headingTitle'>Education</div>
+            <div className='educationWrapper'>
+                <AddEducation />
+                <AddEducation />
+                <AddEducation />
+            </div>
+
+                <div className='jobExpFieldInput'>
+                <div className = 'headingTitle'>Work Experience</div>
+
+        <div className='addRemoveButtonWrapper'>
+        <button className = 'jobInputButtons' id = 'inputButtonAdd' onClick={buttonClick}>Add</button>
+        <button className = 'jobInputButtons' id = 'inputButtonRemove' onClick={buttonClickRemove}>Remove</button>
+        </div>
+        {inputFields.map((inputField, id) => {
+            return (
+                
+                
+ <form className='jobInputFieldWrapper' key={id}>
+
+            <div className='formInputBoxes'>
+            <input className='inputBoxes' placeholder = 'Employer' id = 'company' name = 'company' onChange={(e) => addValueToObject(e, id)} value={inputField.company}></input>
+            <input className='inputBoxes' placeholder = 'Position Name' id = 'position'name = 'position' onChange={(e) => addValueToObject(e, id)} value={inputField.position}></input>
+            <input className='inputBoxes' placeholder = 'Date Employed From: ' type='date' id = 'from' name = 'from' onChange={(e) => addValueToObject(e, id)} value={inputField.from}></input>
+            <input className='inputBoxes' placeholder = 'Date Employed To: ' type='date' id = 'to' name = 'to' onChange={(e) => addValueToObject(e, id)} value={inputField.to}></input>
+            <textarea className='inputBoxes' rows='4' columns = '50'  placeholder = 'Job Desription' id = 'duties' name = 'duties' onChange={(e) => addValueToObject(e, id)} value={inputField.duties}></textarea>
+            </div>
+            <AddJobExp 
+            company = {inputField.company}
+            position = {inputField.position}
+            from = {inputField.from}
+            to = {inputField.to}
+            duties = {inputField.duties}
+            />
             
 
-            <div className = 'headingTitle'>Education</div>
+ </form> )
+        })
+        }
+    </div>
 
-            <AddEducation />
-            <AddEducation />
-            <AddEducation />
-
-            <div className = 'headingTitle'>Work Experience</div>
+            </div>
+           
+            
+          
             
 
-            <AddJobExp />
             </div>
             <CVdesign />
             <div className = 'GeneralInfoSection'>  
@@ -80,7 +138,8 @@ function GeneralInfo() {
             <div className='experienceField'>
             <div className = 'cvSubHeadingTitleRightSide'>EXPERIENCE</div>
             <div className = 'subheadingShapeRight'></div>
-            
+          
+
             </div>
           
             </div>

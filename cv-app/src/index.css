@@ -63,7 +63,7 @@ align-items:center;
 .headingTitle {
   display: flex;
   justify-content: center;
-  padding: 7px;
+
 }
 input::placeholder {
   color: rgb(0, 0, 0);
@@ -85,7 +85,6 @@ input::placeholder {
   border-color: rgb(24 74 133);
   resize: none;
 }
-
 #textArea {
   max-width: 500px;
   min-width: 500px;
@@ -265,7 +264,7 @@ z-index: 1;
 .profileInput {
   position: absolute;
   margin-left: 930px;
-  margin-top: 20px;
+  margin-top: 38px;
   z-index: 1;
   max-width: 410px;
   max-height: 160px;
@@ -355,7 +354,7 @@ resize: none;
   display: flex;
   flex-direction: column;
   margin-left: 630px;
-  margin-top: -20px;
+  margin-top: -0px;
   position: absolute;
   z-index: 1;
   color: white;
@@ -373,7 +372,6 @@ resize: none;
   flex-direction: row;
   gap: 15px;
   overflow-wrap: break-word;
-
 }
 #notes{
   height: 25px;
@@ -381,4 +379,27 @@ resize: none;
 #companyNAme {
   font-size: 16px;
   font-weight: bold;
+}
+.jobDates {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.employmentWrapper {
+    position: absolute;
+    margin-left: 930px;
+    margin-top: -490px;
+    max-width: 410px;
+    max-height: 160px;
+    overflow-wrap: break-word;
+}
+#jobTitle {
+  font-size: 16px;
+  color: rgb(29, 29, 29);
+  font-weight: bold;
+}
+.educationWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

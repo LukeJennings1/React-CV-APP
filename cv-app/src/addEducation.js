@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 
-function AddEducation() {
+function AddEducation(props) {
     
     const [UniversityName, setUniversityName] = useState('')
     const [Qualification, setQualification] = useState('')
@@ -33,7 +33,6 @@ return (
         <div className='notes'>{notes}</div>
 
         </div>
-        
   </div>
   
 )
